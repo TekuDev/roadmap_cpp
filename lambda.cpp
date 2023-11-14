@@ -13,6 +13,11 @@ int main() {
     std::vector<int> v {2, 5, 7, 13, 21, 25, 50};
     std::cout << "Using lambda inside a lambda:" << std::endl;
     std::for_each(v.begin(), v.end(), [add](int x) {
-        std::cout << "add(x,1) => " << add(x,1) << std::endl;
+        if (x&1)
+            std::cout << x << " is odd" << std::endl;
+        else
+            std::cout << x << " is even" << std::endl;
+
+        std::cout << "add(" << x << ",1) => " << add(x,1) << std::endl;
     });
 }
